@@ -30,6 +30,8 @@ gevent-websocket = "*"
 
 [dev-packages]
 pylint = "*"
+pytest-cov = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
