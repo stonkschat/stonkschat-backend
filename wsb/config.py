@@ -7,10 +7,16 @@ class Config(object):
   SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "posts.db")
 
   JOBS = [
-    {
-      "id": "sched_getNew",
-      "func": "wsb.scripts.fetchPosts:getNew",
-      "trigger": "interval",
-      "seconds": 30
-    }
+    # {
+    #   "id": "sched_getNew",
+    #   "func": "wsb.scraper.fetchPosts2:getNew",
+    #   "trigger": "interval",
+    #   "minutes": 1
+    # }
   ]
+  REDDIT_CREDENTIALS = {
+    'username':'wsb_api_throwaway',
+    'password':'Hunter2',
+    'client_id':'xXq6FWhj3Q7dSg',
+    'client_secret': 'pehEpglhVFg2MNFByjzwLXmLv6ha1A',
+    'user_agent':'testscript by u/fakebot3 but not really i just copy pasted' }
