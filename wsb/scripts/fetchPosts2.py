@@ -19,7 +19,10 @@ def comment_dict( comment ):
     """
     return {'body_html':comment.body_html, 
             'author': {'name': comment.author.name,'created_utc':comment.author.created_utc },
-            'link_permalink ':comment.permalink }
+            'link_permalink ':comment.permalink,
+            'post_title': comment.submission.title,
+            # 'total_awards_recieved': comment.total_awards_received , # this will always be zero for new comments 
+            }
 
 class Scraper:
     """

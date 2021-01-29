@@ -30,8 +30,8 @@ def parse_args():
 thread = socketio.start_background_task(target=lambda: scraper.run(True))   
 
 if __name__ == "__main__":
-  parse_args()
-  logging.info("starting")
-  socketio.run(app, debug=True) 
+    parse_args()
+    logging.info("starting")
+    socketio.run(app, debug=True) 
    
 
