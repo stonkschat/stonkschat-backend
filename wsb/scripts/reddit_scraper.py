@@ -85,9 +85,7 @@ class Scraper:
                         st = datetime.datetime.fromtimestamp(comment.created_utc).strftime('%Y-%m-%d %H:%M:%S')
                         logger.info("User:{} - {}".format(comment.author, st))
                         logger.info(comment.body )
-                        data = comment_dict(comment)
-                        
-                        self.socketio.emit( 'new comment', data, broadcast=True)
+                        self.send_updates(comment)
                         self.last_comment_time = comment.created_utc
                     except Exception as e:
                         logger.error('uhoh', e)
@@ -101,6 +99,17 @@ class Scraper:
                 logger.info("waiting for more tendies from {}".format(submission.title))
                 self.socketio.sleep(2) #chill
                 logger.debug('wake')
+
+
+    def send_updates(self, comment):
+        printcfg = Config.SOCKETS
+        if printcfg==True:
+            data = comment_dict(comment)
+            self.socketio.emit( 'new comment', data, broadcast=True)
+        else:
+            print('[*] ' +comment.body +'\n')
+
+
 
 
 

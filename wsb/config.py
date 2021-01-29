@@ -10,3 +10,5 @@ class Config(object):
     'client_id':'xXq6FWhj3Q7dSg',
     'client_secret': 'pehEpglhVFg2MNFByjzwLXmLv6ha1A',
     'user_agent':'testscript by u/fakebot3 but not really i just copy pasted' }
+
+  SOCKETS = False
