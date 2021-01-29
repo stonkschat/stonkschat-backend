@@ -22,7 +22,7 @@ def parse_args():
     c_handler.setFormatter(c_format)
 
     logging.basicConfig(level = logging.WARN, format="%(asctime)s: %(message)s", datefmt="%H:%M:%S")
-    logger = logging.getLogger("fetchPosts")
+    logger = logging.getLogger("reddit_scraper")
     logger.setLevel(loglevel)
     logger.addHandler(c_handler)
     return args 

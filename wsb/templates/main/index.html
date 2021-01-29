@@ -4,7 +4,7 @@
   </head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
   <script type="text/javascript" charset="utf-8">
-      console.log('pls')
+      console.log('can you hear me???')
         var socket = io({ upgrade: false, transports: ['websocket'] , rememberTransport: false});
       socket.on('new comment', (data) => {
           var item = document.createElement('li');
@@ -14,7 +14,7 @@
           window.scrollTo(0, document.body.scrollHeight);
         });
       socket.on('connect', (data) => {
-          console.log('plsdsdsdsds')
+          console.log('Connected')
       });
     </script>
     <ul id="myList"></ul>

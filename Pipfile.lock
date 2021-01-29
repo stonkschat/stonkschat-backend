@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "146c2198503074b81595e7ba91915d1e61946c1ccf290b781f6b268bb0732e8a"
+            "sha256": "08fba7b5d3ac861eebcf95ec0b1056991f87c01661ab3f21ec1214cf47f4c115"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -105,13 +105,6 @@
             ],
             "index": "pypi",
             "version": "==1.1.2"
-        },
-        "flask-apscheduler": {
-            "hashes": [
-                "sha256:7911d66e449f412d92a1a6c524217f44f4c40a5c92148c60d5189c6c402f87d0"
-            ],
-            "index": "pypi",
-            "version": "==1.11.0"
         },
         "flask-socketio": {
             "hashes": [
@@ -394,7 +387,7 @@
                 "sha256:f1e88b30da8163215eab643962ae9d9252e47b4ea53404f2c4f10f24e70ddc62",
                 "sha256:f8191fef303025879e6c3548ecd8a95aafc0728c764ab72ec51a0bdf0c91a341"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.3.22"
         },
         "tzlocal": {
@@ -586,7 +579,7 @@
                 "sha256:fbb17c0d0822684b7d6c09915677a32319f16ff1115df5ec05bdcaaee40b35f3",
                 "sha256:fff1f3a586246110f34dc762098b5afd2de88de507559e63553d7da643053786"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4.0'",
             "version": "==5.4"
         },
         "importlib-metadata": {
@@ -609,7 +602,7 @@
                 "sha256:c729845434366216d320e936b8ad6f9d681aab72dc7cbc2d51bedc3582f3ad1e",
                 "sha256:fff4f0c04e1825522ce6949973e83110a6e907750cd92d128b0d14aaaadbffdc"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4'",
+            "markers": "python_version >= '3.6' and python_version < '4.0'",
             "version": "==5.7.0"
         },
         "lazy-object-proxy": {
