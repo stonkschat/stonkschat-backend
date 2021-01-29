@@ -1,10 +1,13 @@
 from wsb import socketio,app,scraper
+from wsb import Config
 import argparse
 import logging
 
 def parse_args():
     parser = argparse.ArgumentParser(description = "stonks backend")
     parser.add_argument("-v", "--verbose", action = "count", default = 0, help = "Increase verbosity")
+    parser.add_argument("-p", "--printToConsole", action="store_true",
+                    help="increase output verbosity")
 
     args = parser.parse_args()
 
@@ -25,6 +28,9 @@ def parse_args():
     logger = logging.getLogger("reddit_scraper")
     logger.setLevel(loglevel)
     logger.addHandler(c_handler)
+
+    if args.printToConsole :
+        Config.SOCKETS = False
     return args 
 
 thread = socketio.start_background_task(target=lambda: scraper.run(True))   
