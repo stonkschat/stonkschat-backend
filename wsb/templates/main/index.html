@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>WSB - {{ title }}</title>
+  </head>
+  <body>
+    <p>WSB Chat Application</p>
+    {% for post in posts %}
+      {{ post.title }}
+      {{ post.content }}
+    {% endfor %}
+  </body>
+</html>
