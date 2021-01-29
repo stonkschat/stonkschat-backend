@@ -13,12 +13,8 @@ def getNew():
   posts = r.json()["data"]
 
   for post in posts["children"]:
-    post = Post(title=post["data"]["title"], content=post["data"]["selftext"])
+    post = Post(title=post["data"]["title"])
     db.session.add(post)
     db.session.commit()
-    print(post["title"])
 
   logger.info("Posts updated.")
-
-if __name__ == "__main__":
-  getNew()
