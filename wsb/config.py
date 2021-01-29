@@ -7,10 +7,10 @@ class Config(object):
   SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "posts.db")
 
   JOBS = [
-    {
-      "id": "sched_getNew",
-      "func": "wsb.scripts.fetchPosts:getNew",
-      "trigger": "interval",
-      "minutes": 1
-    }
+    # {
+    #   "id": "sched_getNew",
+    #   "func": "wsb.scraper.fetchPosts2:getNew",
+    #   "trigger": "interval",
+    #   "minutes": 1
+    # }
   ]

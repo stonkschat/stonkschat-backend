@@ -1,12 +1,22 @@
 <html>
   <head>
-    <title>WSB - {{ title }}</title>
+    <title>WSB ????</title>
   </head>
-  <body>
-    <p>WSB Chat Application</p>
-    {% for post in posts %}
-      <h3>{{ post.title }}</h3>
-      <br>
-    {% endfor %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf-8">
+      console.log('pls')
+        var socket = io();
+      socket.on('new comment', (data) => {
+          var item = document.createElement('li');
+          console.log(data);
+          item.innerHTML = data.body_html;
+          document.getElementById("myList").appendChild(item);
+          window.scrollTo(0, document.body.scrollHeight);
+        });
+      socket.on('connect', (data) => {
+          console.log('plsdsdsdsds')
+      });
+    </script>
+    <ul id="myList"></ul>
   </body>
 </html>
