@@ -1,3 +1,5 @@
+# stonk.chat backend
+
 # Steps to run locally
 
 1. `pipenv install`

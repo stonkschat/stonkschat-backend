@@ -27,6 +27,7 @@ Flask-SocketIO = "==5.0.1"
 praw = "*"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
 python_version = "3.7"
