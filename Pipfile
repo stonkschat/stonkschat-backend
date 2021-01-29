@@ -25,6 +25,8 @@ SQLAlchemy = "==1.3.22"
 Werkzeug = "==1.0.1"
 Flask-SocketIO = "==5.0.1"
 praw = "*"
+gevent = "*"
+gevent-websocket = "*"
 
 [dev-packages]
 pylint = "*"

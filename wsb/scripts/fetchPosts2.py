@@ -87,7 +87,7 @@ class Scraper:
                 submission.comment_sort = "new"
                 i = len(submission.comments)-1
                 logger.info("waiting for more tendies from {}".format(submission.title))
-                self.socketio.sleep(5) #chill
+                self.socketio.sleep(2) #chill
                 logger.debug('wake')
 
 

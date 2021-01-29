@@ -15,7 +15,9 @@ db = SQLAlchemy(app)
 from wsb.main.routes import main
 
 app.register_blueprint(main)
-socketio = SocketIO(app, cors_allowed_origins='*', async_mode='threading')
+socketio = SocketIO(app, cors_allowed_origins='*')
+
+# socketio = SocketIO(app, cors_allowed_origins='*', async_mode='threading')
 
 
 @socketio.on('client_connected')
