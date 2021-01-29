@@ -11,6 +11,6 @@ class Config(object):
       "id": "sched_getNew",
       "func": "wsb.scripts.fetchPosts:getNew",
       "trigger": "interval",
-      "minutes": 1
+      "seconds": 30
     }
   ]

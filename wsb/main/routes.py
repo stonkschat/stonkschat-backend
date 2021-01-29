@@ -7,5 +7,5 @@ main = Blueprint("main", __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-  threads = Post.query.all()
+  threads = Thread.query.all()
   return render_template("main/index.html", threads=threads, title="Home")

@@ -13,8 +13,13 @@ def getNew():
   threads = r.json()["data"]
 
   for thread in threads["children"]:
-    thread = Thread(title=thread["data"]["title"])
-    db.session.add(thread)
-    db.session.commit()
+    thread = thread["data"]
+
+    post = Thread(title=thread["title"])
+    if thread["selftext"]:
+      post.content = thread["selftext"]
+    db.session.add(post)
+
+  db.session.commit()
 
   logger.info("Threads updated.")

@@ -4,8 +4,9 @@
   </head>
   <body>
     <p>WSB Chat Application</p>
-    {% for post in posts %}
-      <h3>{{ post.title }}</h3>
+    {% for thread in threads %}
+      <h3>{{ thread.title }}</h3>
+      <p>{{ thread.content }}</p>
       <br>
     {% endfor %}
   </body>
