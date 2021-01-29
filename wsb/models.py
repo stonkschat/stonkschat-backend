@@ -1,5 +1,5 @@
 from wsb import db
 
-class Post(db.Model):
+class Thread(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   title = db.Column(db.String(), nullable=False)
