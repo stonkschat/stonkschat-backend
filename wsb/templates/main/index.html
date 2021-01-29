@@ -6,7 +6,17 @@
     <p>WSB Chat Application</p>
     {% for thread in threads %}
       <h3>{{ thread.title }}</h3>
-      <p>{{ thread.content }}</p>
+      <p>/u/{{ thread.author }}</p>
+      {% if thread.content %}
+        <p>{{ thread.content }}</p>
+      {% endif %}
+      {% if thread.image_url %}
+        <img src="{{ thread.image_url }}">
+      {% elif thread.video_url %}
+        <video width="400" controls>
+          <source src="{{ thread.video_url }}" type="video/mp4"></source>
+        </video>
+      {% endif %}
       <br>
     {% endfor %}
   </body>

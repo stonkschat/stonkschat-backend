@@ -15,10 +15,16 @@ def getNew():
   for thread in threads["children"]:
     thread = thread["data"]
 
-    post = Thread(title=thread["title"])
-    if thread["selftext"]:
-      post.content = thread["selftext"]
-    db.session.add(post)
+    if (Thread.query.filter_by(thread_id=thread["id"]).scalar() is None):
+      post = Thread(thread_id=thread["id"], title=thread["title"], author=thread["author"])
+      if thread["selftext"]:
+        post.content = thread["selftext"]
+      
+      if thread["media"]:
+        if thread["is_video"]:
+          post.video_url = thread["media"]["reddit_video"]["fallback_url"]
+
+      db.session.add(post)
 
   db.session.commit()
 
