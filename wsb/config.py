@@ -11,8 +11,4 @@ class Config(object):
         'client_secret': 'pehEpglhVFg2MNFByjzwLXmLv6ha1A',
         'user_agent':'testscript by u/fakebot3 but not really i just copy pasted' }
 
-<<<<<<< HEAD
-    SOCKETS = True
-=======
-  SOCKETS = True
->>>>>>> origin/master
+    SOCKETS = False
