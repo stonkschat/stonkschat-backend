@@ -5,11 +5,6 @@ from flask_socketio import SocketIO
 
 from wsb.config import Config
 from wsb.scripts.fetchPosts2 import Scraper
-import logging
-
-
-logging.basicConfig()
-logging.getLogger('apscheduler').setLevel(logging.DEBUG)
 
 app = Flask(__name__)
 app.config.from_object(Config)
