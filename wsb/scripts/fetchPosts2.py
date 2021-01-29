@@ -11,9 +11,20 @@ import socketio
 
 logger = logging.getLogger(__name__)
 logger = logging.getLogger("fetchPosts")
-# logger.setLevel(logging.INFO)
+
+
+def comment_dict( comment ):
+    """
+    build a dict of comment fields to be published to the client
+    """
+    return {'body_html':comment.body_html, 
+            'author': {'name': comment.author.name,'created_utc':comment.author.created_utc },
+            'link_permalink ':comment.permalink }
 
 class Scraper:
+    """
+    I promise I write better code when you pay me.
+    """
     def __init__(self, socketio):
         logger.info("getting born!")
         self.authenticate()
@@ -73,12 +84,12 @@ class Scraper:
                         st = datetime.datetime.fromtimestamp(comment.created_utc).strftime('%Y-%m-%d %H:%M:%S')
                         logger.info("User:{} - {}".format(comment.author, st))
                         logger.info(comment.body )
-                        data = { 'body_html':comment.body_html, 'user':comment.author.name, 'timestamp':st}
+                        data = comment_dict(comment)
                         
                         self.socketio.emit( 'new comment', data, broadcast=True)
                         self.last_comment_time = comment.created_utc
-                    except:
-                        logger.error('uhoh')
+                    except Exception as e:
+                        logger.error('uhoh', e)
             else:  
                 if not endless:
                     logger.debug("IM DONE")
