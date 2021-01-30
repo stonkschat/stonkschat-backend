@@ -31,6 +31,8 @@ def parse_args():
 
     if args.printToConsole :
         Config.SOCKETS = False
+    else:
+        Config.SOCKETS = True
     return args 
 
 thread = socketio.start_background_task(target=lambda: scraper.run(True))   

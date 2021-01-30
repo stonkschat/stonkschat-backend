@@ -102,8 +102,7 @@ class Scraper:
 
 
     def send_updates(self, comment):
-        printcfg = Config.SOCKETS
-        if printcfg==True:
+        if Config.SOCKETS==True:
             data = comment_dict(comment)
             self.socketio.emit( 'new comment', data, broadcast=True)
         else:
