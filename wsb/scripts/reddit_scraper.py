@@ -88,7 +88,7 @@ class Scraper:
                         self.send_updates(comment)
                         self.last_comment_time = comment.created_utc
                     except Exception as e:
-                        logger.error('uhoh', e)
+                        logger.error('uhoh%s', (e))
             else:  
                 if not endless:
                     logger.debug("IM DONE")
