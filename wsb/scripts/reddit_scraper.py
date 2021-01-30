@@ -86,7 +86,7 @@ class Scraper:
                         logger.info("User:{} - {}".format(comment.author, st))
                         logger.info(comment.body )
                         self.send_updates(comment)
-                        self.last_comment_time = comment.created_utc
+                        # self.last_comment_time = comment.created_utc Temporarily removing last_comment_time as it's causing a buffer
                     except Exception as e:
                         logger.error('uhoh%s', (e))
             else:  
